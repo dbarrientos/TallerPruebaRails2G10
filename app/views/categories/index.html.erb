@@ -1,0 +1,19 @@
+<h1>Categories#index</h1>
+
+
+<br><br>
+
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Discount</th>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td><%= category.discount %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
