@@ -8,9 +8,9 @@
 
 Category.destroy_all
 
-cat1 = Category.create!(name: "Categoría 1")
-cat2 = Category.create!(name: "Categoría 2")
-cat3 = Category.create!(name: "Categoría 3")
+cat1 = Category.create!(name: "Categoría 1", discount: 20)
+cat2 = Category.create!(name: "Categoría 2", discount: 15)
+cat3 = Category.create!(name: "Categoría 3", discount: 40)
 
 cat1.products.build(name: "Producto 1", price: 1990)
 cat2.products.build(name: "Producto 2", price: 2990)
