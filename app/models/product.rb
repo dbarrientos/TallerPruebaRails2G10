@@ -3,6 +3,10 @@ class Product < ApplicationRecord
 
   validates :price, presence: true
 
+  scope :all_premium, -> {where(premium: true)}
+
+  scope :last_n, ->(cant) {limit(cant)}
+
   # before_save :premium_default
 
   # def premium_default
