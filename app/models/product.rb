@@ -7,6 +7,30 @@ class Product < ApplicationRecord
 
   scope :last_n, ->(cant) {limit(cant)}
 
+  after_destroy :last_product
+
+
+  def last_product
+
+    Category.all.each do |category|
+      if category.products.empty?
+        category.destroy
+      end
+    end
+
+  end
+
+
+  def precio_final
+    dis = self.category.discount
+    pric = self.price
+
+    descuento = (pric * dis.to_f)/100
+
+    return pric - descuento
+
+  end
+
   # before_save :premium_default
 
   # def premium_default
