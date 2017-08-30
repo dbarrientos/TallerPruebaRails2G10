@@ -12,9 +12,9 @@ cat1 = Category.create!(name: "Categoría 1", discount: 20)
 cat2 = Category.create!(name: "Categoría 2", discount: 15)
 cat3 = Category.create!(name: "Categoría 3", discount: 40)
 
-cat1.products.build(name: "Producto 1", price: 1990)
-cat2.products.build(name: "Producto 2", price: 2990)
-cat3.products.build(name: "Producto 3", price: 5990)
+cat1.products.build(name: "Producto 1", price: 1990).save
+cat2.products.build(name: "Producto 2", price: 2990).save
+cat3.products.build(name: "Producto 3", price: 5990).save
 
 Product.create!(name: "Producto 4", price: 3599, category_id: cat1.id)
 Product.create!(name: "Producto 5", price: 11999, category_id: cat2.id)
